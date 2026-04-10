@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FocusFlow - Redirecting...</title>
+    <script>
+        // 自动检测浏览器语言并重定向
+        (function() {
+            const lang = navigator.language || navigator.userLanguage;
+            const chineseLangs = ['zh', 'zh-CN', 'zh-Hans', 'zh-Hant', 'zh-TW', 'zh-HK', 'zh-MO'];
+            
+            // 判断是否为中文环境
+            const isChinese = chineseLangs.some(cl => lang.startsWith(cl));
+            
+            // 重定向到对应语言版本
+            if (isChinese) {
+                window.location.href = 'privacy.html';
+            } else {
+                window.location.href = 'privacy-en.html';
+            }
+        })();
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #f5f5f7;
+        }
+        .loading {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .loading a {
+            color: #4facfe;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <p>Loading...</p>
+        <p>
+            <a href="privacy.html">🇨🇳 中文版</a> | 
+            <a href="privacy-en.html">🇺🇸 English</a>
+        </p>
+    </div>
+</body>
+</html>
